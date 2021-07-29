@@ -17,11 +17,11 @@ roslaunch jetmax_control jetmax_control.launch
 2. Forward kinematics
 
       ```
-      rosservice call /jetmax_control/forward_kinematics "angle_rotate: 0.0
+      rosservice call /jetmax_control/forward_kinematics "x: 0.0
       
-      angle_left: 0.0
+      y: -100.0
       
-      angle_right: 0.0"
+      z: 100.0"
       ```
 
       
@@ -29,9 +29,9 @@ roslaunch jetmax_control jetmax_control.launch
 3. Inverse kinematics
 
       ```
-      rosservice call /jetmax_control/inverse_kinematics "angle_rotate: 0.0
+      rosservice call /jetmax_control/inverse_kinematics "angle_rotate: 90.0
       
-      angle_left: 0.0
+      angle_left: 90.0
       
       angle_right: 0.0
       ```
