@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot>
+  <!-- ros_control plugin -->
+  <gazebo>
+    <plugin name="gazebo_ros_control" filename="libgazebo_ros_control.so">
+      <robotNamespace>/jetmax</robotNamespace>
+      <robotSimType>gazebo_ros_control/DefaultRobotHWSim</robotSimType>
+    </plugin>
+  </gazebo>
+
+  <gazebo>
+    <plugin name="gazebo_ros_vacuum_gripper" filename="libgazebo_ros_vacuum_gripper.so">
+      <robotNamespace>/jetmax/vacuum_gripper</robotNamespace>
+      <bodyName>virtual_end_effector</bodyName>
+      <topicName>grasping</topicName>
+      <maxForce>10</maxForce>
+      <maxDistance>0.05</maxDistance>
+      <minDistance>0.01</minDistance>
+    </plugin>
+  </gazebo>
+
+  <!--base_link-->
+  <gazebo reference="Base">
+    <material>Gazebo/Grey</material>
+    <mu1>1</mu1>
+    <mu2>1</mu2>
+    <minDepth>0.01</minDepth>
+  </gazebo>
+
+  <!--link1-->
+  <gazebo reference="Link1">
+    <material>Gazebo/Green</material>
+    <mu1>1</mu1>
+    <mu2>1</mu2>
+    <minDepth>0.01</minDepth>
+  </gazebo>
+
+  <!--link2-->
+  <gazebo reference="Link2">
+    <material>Gazebo/Green</material>
+    <mu1>1</mu1>
+    <mu2>1</mu2>
+    <minDepth>0.01</minDepth>
+  </gazebo>
+
+  <!--link3-->
+  <gazebo reference="Link3">
+    <material>Gazebo/Green</material>
+    <minDepth>0.01</minDepth>
+    <mu1>1</mu1>
+    <mu2>1</mu2>
+    <gravity>0</gravity>
+    <turnGravityOff>true</turnGravityOff>
+  </gazebo>
+
+  <!--link4-->
+  <gazebo reference="Link4">
+    <material>Gazebo/DarkGrey</material>
+    <minDepth>0.01</minDepth>
+    <mu1>1</mu1>
+    <mu2>1</mu2>
+  </gazebo>
+
+  <!--link5-->
+  <gazebo reference="Link5">
+    <material>Gazebo/DarkGrey</material>
+    <mu1>1</mu1>
+    <mu2>1</mu2>
+    <minDepth>0.01</minDepth>
+  </gazebo>
+
+  <!--link6-->
+  <gazebo reference="Link6">
+    <material>Gazebo/Grey</material>
+    <mu1>1</mu1>
+    <mu2>1</mu2>
+    <minDepth>0.01</minDepth>
+  </gazebo>
+
+  <!--link7-->
+  <gazebo reference="Link7">
+    <material>Gazebo/DarkGrey</material>
+    <mu1>1</mu1>
+    <mu2>1</mu2>
+    <minDepth>0.01</minDepth>
+  </gazebo>
+
+  <!--link8-->
+  <gazebo reference="Link8">
+    <material>Gazebo/DarkGrey</material>
+    <mu1>1</mu1>
+    <mu2>1</mu2>
+    <minDepth>0.01</minDepth>
+    <gravity>0</gravity>
+    <turnGravityOff>true</turnGravityOff>
+  </gazebo>
+
+  <!--link9-->
+  <gazebo reference="Link9">
+    <material>Gazebo/DarkGrey</material>
+    <mu1>1</mu1>
+    <mu2>1</mu2>
+    <minDepth>0.01</minDepth>
+    <gravity>0</gravity>
+    <turnGravityOff>true</turnGravityOff>
+  </gazebo>
+
+  <!--virtual_end_effector-->
+  <gazebo reference="virtual_end_effector">
+    <material>Gazebo/GreyTransparent</material>
+    <mu1>0.2</mu1>
+    <mu2>0.2</mu2>
+    <minDepth>0.001</minDepth>
+    <kp>2.0</kp>
+  </gazebo>
+</robot>

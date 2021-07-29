@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<launch>
+  <!--Include description and control launch files-->
+  <!-- World File-->
+  <include file="$(find jetmax_description)/launch/jetmax_spawner.xml" />
+
+  <!-- Launch Gazebo World -->
+  <arg name="world_file" default="$(find jetmax_control)/world/empty.world" />
+  <include file="$(find gazebo_ros)/launch/empty_world.launch">
+    <arg name="use_sim_time" value="true" />
+    <arg name="debug" value="false" />
+    <arg name="gui" value="true" />
+    <arg name="world_name" value="$(arg world_file)" />
+  </include>
+
+  <!-- Launch Rviz -->
+  <!-- <node type="rviz" name="rviz" pkg="rviz" args="-d $(find jetmax_description)/config/jetmax.rviz" /> -->
+</launch>

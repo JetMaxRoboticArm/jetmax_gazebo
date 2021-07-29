@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot name="red_box" xmlns:xacro="http://ros.org/wiki/xacro">
+  <xacro:property name="b_size" value="0.02" />
+  <link name="v_red_box">
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <box size="${b_size} ${b_size} ${b_size}" />
+      </geometry>
+    </collision>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <box size="${b_size} ${b_size} ${b_size}" />
+      </geometry>
+    </visual>
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.05" />
+      <inertia ixx="0.0000033333" ixy="0.0" ixz="0.0" iyy="0.0000033333" iyz="0.0" izz="0.0000033333" />
+    </inertial>
+  </link>
+  <gazebo reference="v_red_box">
+    <material>Gazebo/Red</material>
+    <mu1>0.8</mu1>
+    <mu2>0.8</mu2>
+  </gazebo>
+</robot>

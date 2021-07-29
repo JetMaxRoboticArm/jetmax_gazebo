@@ -1,0 +1,22 @@
+<launch>
+  <!-- Include some relevant files  -->
+  <include file="$(find jetmax_control)/launch/inc/jetmax_spawner.xml" />
+  <include file="$(find jetmax_control)/launch/inc/robot_control.xml" />
+
+  <!-- Launch Gazebo World -->
+  <!-- World File-->
+  <arg name="world_file" default="$(find jetmax_control)/world/empty.world" />
+
+  <include file="$(find gazebo_ros)/launch/empty_world.launch">
+    <arg name="use_sim_time" value="true" />
+    <arg name="debug" value="false" />
+    <arg name="gui" value="true" />
+    <arg name="world_name" value="$(arg world_file)" />
+  </include>
+
+  <!-- forward kinematic service-->
+  <node name="fk_jetmax" pkg="jetmax_control" type="jetmax_fk.py" output="screen" />
+
+  <!-- inverse kinematic service-->
+  <node name="ik_jetmax" pkg="jetmax_control" type="jetmax_ik.py" output="screen" />
+</launch>

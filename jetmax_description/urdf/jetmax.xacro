@@ -1,0 +1,306 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot name="jetmax" xmlns:xacro="http://ros.org/wiki/xacro">
+
+	<xacro:include filename="$(find jetmax_description)/urdf/jetmax.gazebo" />
+	<xacro:include filename="$(find jetmax_description)/urdf/jetmax_joints.xml" />
+	<xacro:include filename="$(find jetmax_description)/urdf/jetmax_trans.xml" />
+
+	<!-- Used for fixing robot to Gazebo 'base_link' -->
+	<link name="world" />
+	<joint name="base_joint" type="fixed">
+		<origin xyz="0 0 0" rpy="0 0 0" />
+		<parent link="world" />
+		<child link="Base" />
+	</joint>
+
+	<link name="Base">
+		<inertial>
+			<origin xyz="0.010476 0.000747 0.035226" rpy="0 0 0" />
+			<mass value="1.886" />
+			<inertia ixx="0.001196219" ixy="-0.000029358" ixz="0.000014859" iyy="0.001147997" iyz="0.000016274" izz="0.001425617" />
+		</inertial>
+		<visual>
+			<geometry>
+				<mesh filename="package://jetmax_description/meshes/Base.STL" />
+			</geometry>
+			<origin xyz="0 0 0 " rpy="0 0 0" />
+			<material name="">
+				<color rgba="0.3 0.3 0.3 1" />
+			</material>
+		</visual>
+		<collision>
+			<geometry>
+				<mesh filename="package://jetmax_description/meshes/Base.STL" />
+			</geometry>
+			<origin xyz="0 0 0 " rpy="0 0 0" />
+			<material name="">
+				<color rgba="0.3 0.3 0.3 1" />
+			</material>
+		</collision>
+	</link>
+
+	<!-- Link1 -->
+	<link name="Link1">
+		<inertial>
+			<origin xyz="0.000135034195772407 0.00109321694483089 0.0183112755491682" rpy="0 0 0" />
+			<mass value="0.0728933339868163" />
+			<inertia ixx="2.14298640017025E-05" ixy="-2.89607263877135E-07" ixz="-2.50232645343001E-07" iyy="2.91749493668566E-05" iyz="-4.66708489050865E-07" izz="3.69554346312356E-05" />
+		</inertial>
+		<visual>
+			<origin xyz="0 0 0" rpy="0 0 0" />
+			<geometry>
+				<mesh filename="package://jetmax_description/meshes/Link1.STL" />
+			</geometry>
+			<material name="">
+				<color rgba="0.3 0.8 0.3 1" />
+			</material>
+		</visual>
+		<collision>
+			<geometry>
+				<mesh filename="package://jetmax_description/meshes/Link1.STL" />
+			</geometry>
+			<origin xyz="0 0 0" rpy="0 0 0" />
+			<material name="">
+				<color rgba="0.3 0.8 0.3 1" />
+			</material>
+		</collision>
+	</link>
+
+	<!-- Link2 -->
+	<link name="Link2">
+		<inertial>
+			<origin xyz="0.00765271680415348 -0.00564032181439453 0.0645696379877304" rpy="0 0 0" />
+			<mass value="0.00784724444360323" />
+			<inertia ixx="1.22077141766406E-05" ixy="-2.56626352410203E-12" ixz="2.18721455898358E-11" iyy="1.20635228259973E-05" iyz="-8.37811389829182E-09" izz="1.85111429098974E-07" />
+		</inertial>
+		<visual>
+			<origin xyz="0 0 0" rpy="0 0 0" />
+			<geometry>
+				<mesh filename="package://jetmax_description/meshes/Link2.STL" />
+			</geometry>
+			<material name="">
+				<color rgba="0.3 0.8 0.3 1" />
+			</material>
+		</visual>
+		<collision>
+			<geometry>
+				<mesh filename="package://jetmax_description/meshes/Link2.STL" />
+			</geometry>
+			<origin xyz="0 0 0" rpy="0 0 0" />
+			<material name="">
+				<color rgba="0.3 0.8 0.3 1" />
+			</material>
+		</collision>
+	</link>
+
+	<!-- Link3 -->
+	<link name="Link3">
+		<inertial>
+			<origin xyz="0.0111023082591837 -0.0510718557868904 0.010583011262476" rpy="0 0 0" />
+			<mass value="0.0132977842675631" />
+			<inertia ixx="3.54886852385141E-05" ixy="5.12462478755268E-10" ixz="-2.37660584064651E-12" iyy="4.55005965696414E-07" iyz="-8.87584759607154E-09" izz="3.5273915996023E-05" />
+		</inertial>
+		<visual>
+			<origin xyz="0 0 0" rpy="0 0 0" />
+			<geometry>
+				<mesh filename="package://jetmax_description/meshes/Link3.STL" />
+			</geometry>
+			<material name="">
+				<color rgba="0.3 0.3 0.3 1" />
+			</material>
+		</visual>
+		<collision>
+			<geometry>
+				<mesh filename="package://jetmax_description/meshes/Link3.STL" />
+			</geometry>
+			<origin xyz="0 0 0" rpy="0 0 0" />
+			<material name="">
+				<color rgba="0.3 0.3 0.3 1" />
+			</material>
+		</collision>
+	</link>
+
+	<!-- Link4 -->
+	<link name="Link4">
+		<inertial>
+			<origin xyz="-0.00206621592997893 6.03032002875811E-05 0.0178304006692972" rpy="0 0 0" />
+			<mass value="0.00488471900207598" />
+			<inertia ixx="3.14008966949909E-06" ixy="6.90852582003946E-12" ixz="2.09166544916303E-09" iyy="4.48677806030484E-07" iyz="7.6287742749524E-09" izz="2.70568872015966E-06" />
+		</inertial>
+		<visual>
+			<origin xyz="0 0 0" rpy="0 0 0" />
+			<geometry>
+				<mesh filename="package://jetmax_description/meshes/Link4.STL" />
+			</geometry>
+			<material name="">
+				<color rgba="0.3 0.3 0.3 1" />
+			</material>
+		</visual>
+		<collision>
+			<origin xyz="0 0 0" rpy="0 0 0" />
+			<geometry>
+				<mesh filename="package://jetmax_description/meshes/Link4.STL" />
+			</geometry>
+			<material name="">
+				<color rgba="0.3 0.3 0.3 1" />
+			</material>
+		</collision>
+	</link>
+
+	<!-- Link5 -->
+	<link name="Link5">
+		<inertial>
+			<origin xyz="0.00297187798602281 0.00825612673447451 0.0634793344227514" rpy="0 0 0" />
+			<mass value="0.00876654010880379" />
+			<inertia ixx="1.61136375679029E-05" ixy="-2.03742999920557E-09" ixz="1.60154269398485E-08" iyy="1.58014651494045E-05" iyz="-5.24434589385828E-08" izz="3.3849348105445E-07" />
+		</inertial>
+		<visual>
+			<origin xyz="0 0 0" rpy="0 0 0" />
+			<geometry>
+				<mesh filename="package://jetmax_description/meshes/Link5.STL" />
+			</geometry>
+			<material name="">
+				<color rgba="0.3 0.3 0.3 1" />
+			</material>
+		</visual>
+		<collision>
+			<origin xyz="0 0 0" rpy="0 0 0" />
+			<geometry>
+				<mesh filename="package://jetmax_description/meshes/Link5.STL" />
+			</geometry>
+			<material name="">
+				<color rgba="0.3 0.3 0.3 1" />
+			</material>
+		</collision>
+	</link>
+
+	<!-- Link6 -->
+	<link name="Link6">
+		<inertial>
+			<origin xyz="-0.00156645996394517 0.0170671085599175 -0.00142661608392454" rpy="0 0 0" />
+			<mass value="0.00299123672293848" />
+			<inertia ixx="1.09498404516366E-06" ixy="-2.89208247886698E-08" ixz="2.41723707325229E-09" iyy="1.24275970569405E-07" iyz="1.08519952281429E-07" izz="9.79182797127753E-07" />
+		</inertial>
+		<visual>
+			<origin xyz="0 0 0" rpy="0 0 0" />
+			<geometry>
+				<mesh filename="package://jetmax_description/meshes/Link6.STL" />
+			</geometry>
+
+			<material name="">
+				<color rgba="0.3 0.3 0.3 1" />
+			</material>
+		</visual>
+		<collision>
+			<origin xyz="0 0 0" rpy="0 0 0" />
+			<geometry>
+				<mesh filename="package://jetmax_description/meshes/Link6.STL" />
+			</geometry>
+
+			<material name="">
+				<color rgba="0.3 0.3 0.3 1" />
+			</material>
+		</collision>
+	</link>
+
+	<!-- Link7 -->
+	<link name="Link7">
+		<inertial>
+			<origin xyz="0.00310000000067368 2.00048311249645E-14 0.0641999999737873" rpy="0 0 0" />
+			<mass value="0.00558674751354967" />
+			<inertia ixx="1.18311388770695E-05" ixy="-1.63254184273265E-19" ixz="-2.33505622285002E-19" iyy="1.17902984856129E-05" iyz="-6.97204454596219E-11" izz="5.97081668516015E-08" />
+		</inertial>
+		<visual>
+			<origin xyz="0 0 0" rpy="0 0 0" />
+			<geometry>
+				<mesh filename="package://jetmax_description/meshes/Link7.STL" />
+			</geometry>
+			<material name="">
+				<color rgba="0.3 0.3 0.3 1" />
+			</material>
+		</visual>
+		<collision>
+			<origin xyz="0 0 0" rpy="0 0 0" />
+			<geometry>
+				<mesh filename="package://jetmax_description/meshes/Link7.STL" />
+			</geometry>
+			<material name="">
+				<color rgba="0.3 0.3 0.3 1" />
+			</material>
+		</collision>
+	</link>
+
+	<!-- Link8 -->
+	<link name="Link8">
+		<inertial>
+			<origin xyz="0.00855582658715432 -0.0305915459203674 -0.0166796250390699" rpy="0 0 0" />
+			<mass value="0.0255414644762081" />
+			<inertia ixx="3.45277676985065E-06" ixy="6.51983145958304E-08" ixz="-2.22649617236213E-07" iyy="2.56448224106543E-06" iyz="1.5148507364002E-07" izz="4.22998316264138E-06" />
+		</inertial>
+		<visual>
+			<origin xyz="0 0 0" rpy="0 0 0" />
+			<geometry>
+				<mesh filename="package://jetmax_description/meshes/Suction.STL" />
+			</geometry>
+			<material name="">
+				<color rgba="0.3 0.3 0.3 1" />
+			</material>
+		</visual>
+		<!-- to have a stabile behavior during picking objects, we had to commment this part -->
+		<!-- <collision>
+		  <origin xyz="0 0 0" rpy="0 0 0" />
+		  <geometry>
+			<mesh filename="package://jetmax_description/meshes/Link8.STL" />
+		  </geometry>
+			<material name="">
+				<color rgba="0.3 0.3 0.3 1" />
+			</material>
+		</collision> -->
+	</link>
+
+	<!-- Link9 -->
+	<link name="Link9">
+		<inertial>
+			<origin xyz="-0.0031209546097725 0.0689997041128492 2.55076586058722E-06" rpy="0 0 0" />
+			<mass value="0.00505950165397967" />
+			<inertia ixx="1.31457705494561E-05" ixy="-6.34740703989896E-13" ixz="-3.75233167879503E-12" iyy="4.96360366757673E-08" iyz="-3.01909768471222E-11" izz="1.31140148939841E-05" />
+		</inertial>
+		<visual>
+			<origin xyz="0 0 0" rpy="0 0 0" />
+			<geometry>
+				<mesh filename="package://jetmax_description/meshes/Link9.STL" />
+			</geometry>
+			<material name="">
+				<color rgba="0.3 0.3 0.3 1" />
+			</material>
+		</visual>
+		<collision>
+			<origin xyz="0 0 0" rpy="0 0 0" />
+			<geometry>
+				<mesh filename="package://jetmax_description/meshes/Link9.STL" />
+			</geometry>
+			<material name="">
+				<color rgba="0.3 0.3 0.3 1" />
+			</material>
+		</collision>
+	</link>
+
+	<!-- virtual links needed for vacuum_gripper plugin -->
+	<link name="virtual_end_effector">
+		<gravity>0</gravity>
+		<visual>
+			<origin rpy="0 0 0" xyz="0 0 0" />
+			<geometry>
+				<cylinder radius="0.008" length="0.01" />
+			</geometry>
+			<material name="transparent">
+				<color rgba="0 0 0 0" />
+			</material>
+		</visual>
+		<inertial>
+			<origin rpy="0 0 0" xyz="0.000000 0.000000 0.000000" />
+			<mass value="0.001" />
+			<inertia ixx="0.00000003333" ixy="0" ixz="0" iyy="0.00000003333" iyz="0" izz="0.00000005" />
+		</inertial>
+	</link>
+</robot>
